@@ -1,0 +1,37 @@
+.bottom-navbar {
+  display: flex;
+  justify-content: space-around; /* Sebarkan elemen dengan rata */
+  align-items: center;
+  position: fixed; /* Pastikan Navbar menempel di bawah */
+  bottom: 0; /* Menempel ke bagian bawah layar */
+  left: 0;
+  width: 100%; /* Lebar penuh */
+  padding: 10px 0; /* Tambahkan ruang vertikal */
+  background-color: #003366; /* Warna latar belakang */
+  color: white;
+  z-index: 10; /* Pastikan selalu di atas konten lain */
+}
+
+.bottom-navbar div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s ease;
+}
+
+.bottom-navbar div.active {
+  color: #00bcd4; /* Warna aktif */
+}
+
+.bottom-navbar div:hover {
+  color: white;
+  background-color: #00bcd4; /* Warna hover */
+  border-radius: 5px; /* Efek sudut melengkung */
+  padding: 5px; /* Efek padding saat hover */
+}
+
+.bottom-navbar div p {
+  margin: 5px 0 0;
+  font-size: 12px;
+}

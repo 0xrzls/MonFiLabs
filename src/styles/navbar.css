@@ -1,0 +1,61 @@
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Logo di kiri, menu di kanan */
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #003366;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Jarak antar menu */
+  margin-left: auto; /* Pastikan menu berada di kanan */
+}
+
+.menu li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.menu li:hover,
+.menu li.active {
+  color: #00bcd4;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Muncul di bawah menu More */
+  left: 0;
+  background-color: #003366;
+  border: 1px solid #00bcd4;
+  border-radius: 5px;
+  list-style: none;
+  padding: 5px 0;
+  z-index: 10;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block; /* Tampilkan menu saat hover atau klik */
+}
+
+.dropdown-menu li {
+  padding: 8px 15px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.dropdown-menu li:hover {
+  background-color: #00bcd4;
+  color: white;
+}

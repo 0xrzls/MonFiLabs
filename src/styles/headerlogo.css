@@ -1,0 +1,109 @@
+.header-logo {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  background-color: #003366;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+}
+
+.logo span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 13px; /* Jarak antar elemen dinaikkan menjadi 7px */
+}
+
+.network-dropdown {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+.network-selector {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0 8px;
+  height: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.icon-stack {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.base-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+}
+
+.overlay-icon {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  color: #00bcd4;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background-color: #003366;
+  border: 1px solid white;
+  border-radius: 5px;
+  list-style: none;
+  padding: 5px 0;
+  z-index: 10;
+}
+
+.connect-wallet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.wallet-icon {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.wallet-icon svg {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
