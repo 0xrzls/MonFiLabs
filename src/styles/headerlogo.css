@@ -55,7 +55,14 @@
   height: 40px !important;
   box-sizing: border-box;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+  -webkit-tap-highlight-color: transparent !important; /* Hapus highlight biru */
+}
+
+.network-selector:active {
+  transform: scale(0.95); /* Sedikit mengecil untuk efek ditekan */
+  box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.14), /* Bayangan di atas */
+              inset 0 -3px 3px rgba(0, 0, 0, 0.14); /* Bayangan di bawah */
 }
 
 /* Ikon dan teks dalam tombol selector */
@@ -96,13 +103,14 @@
   top: 45px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  background-color: #fbfdff !important;
+  background-color: #fbfdff !important; /* Sama dengan warna header */
   border: 1px solid #e9e9e9 !important;
-  border-radius: 12px !important;
+  border-radius: 12px !important; /* Membuat kotak melengkung */
   list-style: none !important;
   padding: 5px 0 !important;
   z-index: 10 !important;
   width: 120px !important;
+  overflow: hidden !important; /* Membatasi area highlight ke lengkungan */
 }
 
 /* Elemen dalam dropdown */
@@ -113,12 +121,36 @@
   padding: 5px 10px !important;
   cursor: pointer !important;
   color: black !important;
+  background-color: transparent !important; /* Tidak ada warna latar awal */
+  transition: background-color 0.3s ease !important; /* Smooth efek highlight */
 }
 
+/* Highlight penuh untuk elemen "Testnet" (atas) */
+.dropdown-menu li:first-child:focus,
+.dropdown-menu li:first-child:active {
+  background-color: #ecfff1 !important; /* Warna hijau penuh */
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  box-sizing: border-box !important;
+}
+
+/* Highlight penuh untuk elemen "Devnet" (bawah) */
+.dropdown-menu li:last-child:focus,
+.dropdown-menu li:last-child:active {
+  background-color: #ecfff1 !important; /* Warna hijau penuh */
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  box-sizing: border-box !important;
+}
+
+/* Hover state untuk item dropdown */
 .dropdown-menu li:hover {
-  background-color: #e3ffe9 !important;
+  background-color: #e3ffe9 !important; /* Warna saat hover */
 }
 
+/* Icon di dalam dropdown */
 .dropdown-icon-image {
   width: 18px !important;
   height: 18px !important;
@@ -135,7 +167,14 @@
   border: none !important;
   border-radius: 12px !important;
   cursor: pointer !important;
-  transition: background-color 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent !important; /* Hapus highlight */
+}
+
+.connect-wallet:active {
+  transform: scale(0.95); /* Sedikit mengecil untuk efek ditekan */
+  box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.21), /* Bayangan di atas */
+              inset 0 -3px 3px rgba(0, 0, 0, 0.21); /* Bayangan di bawah */
 }
 
 .wallet-icon {
@@ -147,3 +186,6 @@
   height: 100% !important;
   color: white !important;
 }
+
+
+

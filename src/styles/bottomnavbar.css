@@ -1,37 +1,49 @@
+/* Bottom Navbar */
 .bottom-navbar {
   display: flex;
   justify-content: space-around; /* Sebarkan elemen dengan rata */
   align-items: center;
-  position: fixed; /* Pastikan Navbar menempel di bawah */
-  bottom: 0; /* Menempel ke bagian bawah layar */
+  position: fixed; /* Menempel di bawah layar */
+  bottom: 0;
   left: 0;
   width: 100%; /* Lebar penuh */
   padding: 10px 0; /* Tambahkan ruang vertikal */
-  background-color: #003366; /* Warna latar belakang */
-  color: white;
+  background-color: rgba(255, 255, 255, 0.8) !important; /* Background putih dengan transparansi 80% */
+  backdrop-filter: blur(10px); /* Efek blur pada page di bawah */
+  -webkit-backdrop-filter: blur(10px); /* Efek blur untuk browser berbasis WebKit */
+  border-top: 1px solid #f1f2f3; /* Outline pembatas atas dengan warna baru */
   z-index: 10; /* Pastikan selalu di atas konten lain */
 }
 
+/* Item Navigasi */
 .bottom-navbar div {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  transition: color 0.3s, background-color 0.3s ease;
+  color: #999999; /* Font dan ikon abu-abu default */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  user-select: none; /* Nonaktifkan highlight teks saat di klik */
+  -webkit-tap-highlight-color: transparent; /* Hilangkan kotakan biru di mobile */
 }
 
-.bottom-navbar div.active {
-  color: #00bcd4; /* Warna aktif */
-}
-
-.bottom-navbar div:hover {
-  color: white;
-  background-color: #00bcd4; /* Warna hover */
-  border-radius: 5px; /* Efek sudut melengkung */
-  padding: 5px; /* Efek padding saat hover */
-}
-
+/* Teks di bawah Ikon */
 .bottom-navbar div p {
   margin: 5px 0 0;
   font-size: 12px;
+  font-weight: 500; /* Tingkatkan sedikit ketebalan font teks */
+}
+
+/* Status Aktif */
+.bottom-navbar div.active {
+  color: black; /* Font dan ikon menjadi hitam saat aktif */
+  font-weight: 600; /* Ketebalan lebih besar untuk status aktif */
+}
+
+/* Hover State */
+.bottom-navbar div:hover {
+  color: #666666; /* Font dan ikon abu-abu gelap saat hover */
+  background-color: transparent; /* Hilangkan warna background */
+  border-radius: 0; /* Hilangkan sudut melengkung */
+  padding: 0; /* Hilangkan padding ekstra */
 }
