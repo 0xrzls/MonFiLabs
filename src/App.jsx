@@ -1,40 +1,69 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import HeaderLogo from "./components/HeaderLogo";
 import Navbar from "./components/Navbar";
 import BottomNavbar from "./components/BottomNavbar";
+import MixsPage from "./pages/MixsPage";
+import SwapPage from "./pages/SwapPage";
+import EarnPage from "./pages/EarnPage";
+import PerpPage from "./pages/PerpPage";
+import MorePage from "./pages/MorePage";
 import "./styles/App.css";
 
-const App = () => {
-  // State untuk status aktif dan deteksi perangkat
-  const [active, setActive] = useState("home");
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+const AppWrapper = () => {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+};
 
-  // Mengelola deteksi perangkat saat ukuran jendela berubah
+const App = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [active, setActive] = useState("mixs"); // State aktif untuk menu
+  const location = useLocation();
+
+  useEffect(() => {
+    // Update state active berdasarkan rute yang aktif
+    const path = location.pathname;
+    if (path === "/") {
+      setActive("mixs");
+    } else if (path === "/swap") {
+      setActive("swap");
+    } else if (path === "/earn") {
+      setActive("earn");
+    } else if (path === "/perp") {
+      setActive("perp");
+    } else if (path === "/more") {
+      setActive("more");
+    }
+  }, [location]);
+
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Perangkat mobile: ≤ 768px
+      setIsMobile(window.innerWidth <= 768);
     };
 
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize); // Bersihkan listener
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <div className="app">
-      {/* Render HeaderLogo hanya di perangkat mobile */}
       {isMobile && <HeaderLogo isMobile={isMobile} />}
-
-      {/* Render Navbar hanya di perangkat desktop */}
       {!isMobile && <Navbar active={active} setActive={setActive} />}
-
       <main>
-        <h2>Welcome to MonFi</h2>
+        <Routes>
+          <Route path="/" element={<MixsPage />} />
+          <Route path="/swap" element={<SwapPage />} />
+          <Route path="/earn" element={<EarnPage />} />
+          <Route path="/perp" element={<PerpPage />} />
+          <Route path="/more" element={<MorePage />} />
+        </Routes>
       </main>
-
-      {/* Render BottomNavbar hanya di perangkat mobile */}
       {isMobile && <BottomNavbar active={active} setActive={setActive} />}
     </div>
   );
 };
 
-export default App;
+export default AppWrapper;
