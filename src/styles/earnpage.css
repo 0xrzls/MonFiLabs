@@ -1,0 +1,36 @@
+.earn-page {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.earn-title {
+  font-size: 24px;
+  color: #333;
+}
+
+.earn-description {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.task-list {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-list li {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.task-list a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.task-list a:hover {
+  text-decoration: underline;
+}

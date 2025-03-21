@@ -1,43 +1,69 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./../styles/navbar.css";
-import logo from "../logo.svg";
 
 const Navbar = ({ active, setActive }) => {
-  const [showDropdown, setShowDropdown] = useState(false);
+  const navigate = useNavigate(); // Hook untuk navigasi
+  const [showDropdown, setShowDropdown] = useState(false); // Untuk dropdown menu
 
-  const toggleDropdown = () => {
-    setShowDropdown((prev) => !prev);
+  const handleNavigation = (menu, path) => {
+    setActive(menu); // Update menu aktif
+    navigate(path); // Arahkan ke path rute
   };
 
   return (
     <nav className="navbar">
-      {/* Logo MonFi */}
       <div className="logo">
-        <img src={logo} alt="MonFi Logo" />
+        <h1>MonFi</h1>
       </div>
-
-      {/* Menu Navigasi tanpa menu Home */}
       <ul className="menu">
-        <li onClick={() => setActive("swap")} className={active === "swap" ? "active" : ""}>
+        <li
+          onClick={() => handleNavigation("home", "/")}
+          className={active === "home" ? "active" : ""}
+        >
+          Home
+        </li>
+        <li
+          onClick={() => handleNavigation("swap", "/swap")}
+          className={active === "swap" ? "active" : ""}
+        >
           Swap
         </li>
-        <li onClick={() => setActive("earn")} className={active === "earn" ? "active" : ""}>
+        <li
+          onClick={() => handleNavigation("earn", "/earn")}
+          className={active === "earn" ? "active" : ""}
+        >
           Earn
         </li>
-        <li onClick={() => setActive("perp")} className={active === "perp" ? "active" : ""}>
+        <li
+          onClick={() => handleNavigation("perp", "/perp")}
+          className={active === "perp" ? "active" : ""}
+        >
           Perp
         </li>
         <li
           className="dropdown"
-          onClick={toggleDropdown}
+          onMouseEnter={() => setShowDropdown(true)}
           onMouseLeave={() => setShowDropdown(false)}
         >
           More
           {showDropdown && (
             <ul className="dropdown-menu">
-              <li onClick={() => setActive("settings")}>Settings</li>
-              <li onClick={() => setActive("support")}>Support</li>
-              <li onClick={() => setActive("about")}>About</li>
+              <li>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+                  Discord
+                </a>
+              </li>
+              <li>
+                <a href="https://medium.com" target="_blank" rel="noopener noreferrer">
+                  Medium
+                </a>
+              </li>
             </ul>
           )}
         </li>

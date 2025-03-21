@@ -47,3 +47,19 @@
   border-radius: 0; /* Hilangkan sudut melengkung */
   padding: 0; /* Hilangkan padding ekstra */
 }
+
+/* Reset Gaya Default Elemen <a> */
+.bottom-navbar a {
+  all: unset; /* Hapus semua gaya bawaan seperti warna biru dan garis bawah */
+  display: flex; /* Untuk menyelaraskan ikon dan teks */
+  flex-direction: column; /* Posisi teks di bawah ikon */
+  align-items: center; /* Teks dan ikon sejajar */
+  text-align: center; /* Pusatkan teks */
+  color: inherit; /* Ikuti warna dari parent div */
+  cursor: pointer; /* Gunakan pointer untuk interaksi */
+}
+
+/* Hover state untuk elemen <a> (opsional) */
+.bottom-navbar a:hover {
+  text-decoration: none; /* Pastikan tidak ada garis bawah */
+}

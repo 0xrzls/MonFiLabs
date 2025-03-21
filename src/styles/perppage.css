@@ -1,0 +1,29 @@
+.perp-page {
+  padding: 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.perp-title {
+  font-size: 24px;
+  color: #333;
+}
+
+.perp-description {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.start-trading {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.start-trading:hover {
+  background-color: #218838;
+}

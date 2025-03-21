@@ -1,0 +1,272 @@
+/* Swap Page */
+.swap-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 54vh;
+  background: #f3f4f6;
+  padding: 0 19px; /* Kurangi space card kanan-kiri dengan layar sebesar 2% */
+  box-sizing: border-box;
+}
+
+/* Swap Container */
+.swap-container {
+  width: 103%; /* Card tetap melebar 8% */
+  max-width: 432px; /* Tetap mempertahankan ukuran maksimal */
+  background: white;
+  border-radius: 16px;
+  box-sizing: border-box;
+  box-shadow: none; /* Tanpa shadow */
+  padding: 12px;
+  margin: 0 auto;
+}
+
+/* Header (Title dan Tagline) */
+.swap-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center; /* Pusatkan title */
+  margin-bottom: 6px;
+  color: #333;
+  width: calc(100% - 12px); /* Panjang kolom tetap sesuai */
+  margin: 0 auto; /* Pastikan sejajar dengan kolom */
+}
+
+.swap-description {
+  font-size: 12px;
+  text-align: center; /* Pusatkan tagline */
+  color: #666;
+  margin-bottom: 10px;
+  width: calc(100% - 12px); /* Panjang kolom tetap sesuai */
+  margin: 0 auto;
+}
+
+/* Kolom Swap */
+.swap-columns {
+  background: #f0f3fa;
+  border-radius: 16px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  box-sizing: border-box;
+
+  /* Lebar kolom tetap rapat */
+  width: calc(100% - 15px); /* Space dengan card tetap minimal */
+  margin: 0 auto; /* Center kolom di dalam card */
+}
+
+/* Tombol Swap */
+.swap-button {
+  background: #000; /* Warna tombol hitam */
+  color: #fff; /* Font tombol putih */
+  border: none;
+  border-radius: 16px;
+  box-sizing: border-box;
+
+  /* Panjang tombol mengikuti kolom */
+  width: calc(100% - 15px) !important; /* Panjang tombol sama dengan kolom swap */
+  margin: 22px auto 22px !important; /* Tambahkan jarak 22px dengan kolom di atas dan card bawah */
+
+  display: flex;
+  justify-content: center; /* Isi tombol di tengah */
+  align-items: center;
+  padding: 10px 0; /* Jarak internal tombol */
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.swap-button:hover {
+  background: #333; /* Warna tombol saat hover */
+}
+
+/* Kolom Individual */
+.swap-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3px; /* Tetap pada jarak antar elemen kolom */
+}
+
+.swap-column:first-child {
+  margin-top: 3px; /* Jarak ke background atas */
+  margin-bottom: 3px; /* Jarak ke garis pemisah */
+}
+
+.swap-column:last-child {
+  margin-top: 3px; /* Jarak ke garis pemisah */
+  margin-bottom: 3px; /* Jarak ke background bawah */
+}
+
+/* Label dan Balance Row */
+.label-balance-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+/* Geser font "From" dan "To" ke kanan 3% */
+.label-balance-row label {
+  font-size: 10px;
+  color: #444;
+  margin-left: 3%; /* Geser ke kanan sebesar 3% */
+}
+
+/* Balance (Amount symbol) bergeser ke kiri 3% */
+.label-balance-row .balance-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 3%; /* Geser ke kiri sebesar 3% */
+}
+
+.label-balance-row .balance {
+  font-size: 10px;
+  color: #888; /* Warna balance */
+  font-weight: 500;
+}
+
+.label-balance-row .max-button {
+  font-size: 10px;
+  color: #34a853;
+  font-weight: bold;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.label-balance-row .max-button:hover {
+  text-decoration: underline;
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f0f3fa;
+  border-radius: 16px;
+  padding: 6px 12px;
+  box-shadow: none;
+  height: 40px;
+  overflow: hidden;
+}
+
+.amount-input {
+  flex: 1;
+  text-align: right; /* Pastikan angka tetap rata kanan */
+  border: none;
+  font-size: 14px;
+  background: none;
+  outline: none;
+  padding: 0;
+  max-width: calc(100% - 80px);
+}
+
+/* Garis Pemisah */
+.divider {
+  height: 1px; /* Ketebalan garis */
+  background: white !important;
+  width: calc(100% + 24px); /* Tetap sesuai padding kolom */
+  margin: 0 -12px; /* Tetap proporsional */
+  position: relative;
+}
+
+/* Container untuk Ikon Swap */
+.swap-icon-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px; /* Tetap ukuran lingkaran */
+  height: 40px;
+  background: #f0f3fa;
+  border: 1.1px solid white; /* Perbarui ketebalan outline menjadi 1.1px */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Ikon Swap */
+.swap-icon {
+  font-size: 20px; /* Tetap ukuran ikon */
+  color: #888; /* Warna ikon sama dengan warna balance */
+  transition: transform 0.3s ease;
+}
+
+.swap-icon-container:active .swap-icon {
+  animation: rotate-icon 0.4s ease-in-out;
+}
+
+@keyframes rotate-icon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+/* Token Selector */
+.token-selector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.token-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.token-symbol {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dropdown-icon {
+  font-size: 18px;
+  color: #888;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  margin-top: 4px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: #f3f4f6;
+}
+
+.dropdown-item img {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  border-radius: 50%;
+}
+
+
